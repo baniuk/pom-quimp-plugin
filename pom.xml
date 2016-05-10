@@ -3,7 +3,7 @@
   <!-- Project's coordinates -->
   <groupId>uk.ac.warwick.wsbc</groupId>
   <artifactId>pom-quimp-plugin</artifactId>
-  <version>1.0.1</version>
+  <version>16.05.06</version>
   <!-- http://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it -->
   <packaging>pom</packaging>
   <!-- Name and licencing and other project informations -->
