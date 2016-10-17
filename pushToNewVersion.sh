@@ -30,4 +30,6 @@ git merge release/v$next
 
 sed -i "/$next/s/$next/$nextdev/" pom.xml
 git commit -am "Push to next dev version"
-git push --all
+git branch -d release/v$next
+git push --all trac
+git push --all origin
