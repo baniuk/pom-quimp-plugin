@@ -45,5 +45,5 @@ sed -i "/$next/s/$next/$nextdev/" pom.xml
 git commit -am "Push to next dev version"
 mvn install
 git branch -d release/v$next
-#git push --all trac
-#git push --all origin
+echo 'git push --all trac'
+echo 'git push --all origin'
