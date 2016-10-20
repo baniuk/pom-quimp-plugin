@@ -7,7 +7,7 @@
 # 		nextVer is next full version
 # 		nextDev is next development version
 
-if [ "$#" -ne 3 ]; then
+if [ "$#" -ne 2 ]; then
     echo "syntax: pushToNewVersion.sh nextVer nextDev"
     echo "	Assuming that one is on develop branch:"
     echo "	pushToNewVersion.sh 16.10.03 16.10.04-SNAPSHOT"
