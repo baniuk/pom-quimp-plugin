@@ -3,7 +3,7 @@
   <!-- Project's coordinates -->
   <groupId>uk.ac.warwick.wsbc</groupId>
   <artifactId>pom-quimp-plugin</artifactId>
-  <version>17.02.02_SNAPSHOT</version>
+  <version>17.02.02-SNAPSHOT</version>
   <!-- http://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it -->
   <packaging>pom</packaging>
   <!-- Name and licencing and other project informations -->
@@ -12,40 +12,43 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-      <!-- https://books.sonatype.com/mvnex-book/reference/simple-project-sect-simple-core.html -->
-    </dependency>
-    <dependency>
-      <groupId>uk.ac.warwick.wsbc</groupId>
-      <artifactId>QuimP_</artifactId>
-      <version>17.02.02_SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.6</version>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>1.1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.scijava</groupId>
-      <artifactId>scijava-config</artifactId>
-      <version>2.0.1</version>
-    </dependency>
-  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+        <!-- https://books.sonatype.com/mvnex-book/reference/simple-project-sect-simple-core.html -->
+      </dependency>
+      <dependency>
+        <groupId>uk.ac.warwick.wsbc</groupId>
+        <artifactId>QuimP_</artifactId>
+        <version>17.02.02-SNAPSHOT</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.6</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>1.1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>org.scijava</groupId>
+        <artifactId>scijava-config</artifactId>
+        <version>2.0.1</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <licenses>
     <license>
       <name>The MIT License (MIT)</name>
