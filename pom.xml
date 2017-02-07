@@ -3,7 +3,7 @@
   <!-- Project's coordinates -->
   <groupId>uk.ac.warwick.wsbc</groupId>
   <artifactId>pom-quimp-plugin</artifactId>
-  <version>17.02.03</version>
+  <version>17.02.04-SNAPSHOT</version>
   <!-- http://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it -->
   <packaging>pom</packaging>
   <!-- Name and licencing and other project informations -->
@@ -24,7 +24,7 @@
       <dependency>
         <groupId>uk.ac.warwick.wsbc</groupId>
         <artifactId>QuimP_</artifactId>
-        <version>17.02.03</version>
+        <version>17.02.04-SNAPSHOT</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
