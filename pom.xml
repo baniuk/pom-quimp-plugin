@@ -1,5 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>uk.ac.warwick.wsbc</groupId>
+    <artifactId>pom-quimp-root</artifactId>
+    <version>1.0.0</version>
+    <relativePath/>
+  </parent>
   <!-- Project's coordinates -->
   <groupId>uk.ac.warwick.wsbc</groupId>
   <artifactId>pom-quimp-plugin</artifactId>
@@ -7,175 +13,98 @@
   <!-- http://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it -->
   <packaging>pom</packaging>
   <!-- Name and licencing and other project informations -->
-  <name>pom-quimp</name>
+  <name>Master POM for QuimP plugins</name>
   <description>Collection of dependencies related to QuimP plugins</description>
+  <url>www.warwick.ac.uk/quimp</url>
+  <inceptionYear>2017</inceptionYear>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!--
+      NB: We override these properties to make the enforcer happy.
+      You will need to override them in your POM, too... to valid values.
+      -->
+    <license.licenseName>N/A</license.licenseName>
+    <license.copyrightOwners>N/A</license.copyrightOwners>
+    <license.url>N/A</license.url>
   </properties>
+  <!--
+      NB: We override these properties to make the enforcer happy.
+      You will need to override them in your POM, too... to valid values.
+  -->
+  <scm>
+    <connection>scm:git:https://github.com/baniuk/pom-quimp-plugin.git</connection>
+    <developerConnection>scm:git:https://github.com/baniuk/pom-quimp-plugin.git</developerConnection>
+    <url>https://github.com/baniuk/pom-quimp-plugin/</url>
+    <tag>HEAD</tag>
+  </scm>
+  <!--
+      NB: We override these properties to make the enforcer happy.
+      You will need to override them in your POM, too... to valid values.
+  -->
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/baniuk/pom-quimp-plugin/issues/</url>
+  </issueManagement>
+  <licenses>
+    <license>
+      <name>${license.licenseName}</name>
+      <url>${license.url}</url>
+    </license>
+  </licenses>
+  <!--
+      NB: We override these properties to make the enforcer happy.
+      You will need to override them in your POM, too... to valid values.
+   -->
+  <mailingLists>
+    <mailingList>
+      <name>N/A</name>
+      <archive>N/A</archive>
+    </mailingList>
+  </mailingLists>
+  <ciManagement>
+    <system>None</system>
+  </ciManagement>
   <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-        <scope>test</scope>
-        <!-- https://books.sonatype.com/mvnex-book/reference/simple-project-sect-simple-core.html -->
-      </dependency>
       <dependency>
         <groupId>uk.ac.warwick.wsbc</groupId>
         <artifactId>QuimP_</artifactId>
         <version>17.02.05-SNAPSHOT</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.6</version>
-      </dependency>
-      <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-core</artifactId>
-        <version>1.1.1</version>
-      </dependency>
-      <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>1.1.1</version>
-      </dependency>
-      <dependency>
-        <groupId>org.scijava</groupId>
-        <artifactId>scijava-config</artifactId>
-        <version>2.0.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <licenses>
-    <license>
-      <name>The MIT License (MIT)</name>
-      <comments>Must be reviewed</comments>
-      <distribution>manual</distribution>
-    </license>
-  </licenses>
   <organization>
     <name>Department of Computer Science, University of Warwick</name>
-    <url>http://www2.warwick.ac.uk/fac/sci/systemsbiology/staff/</url>
+    <url>http://www2.warwick.ac.uk/fac/sci/dcs/</url>
   </organization>
   <developers>
     <developer>
-      <id>p.baniukiewicz</id>
+      <id>pbaniukiewicz</id>
+      <name>Piotr Baniukiewicz</name>
+      <email>p.baniukiewicz@warwick.ac.uk</email>
+      <organization>University of Warwick</organization>
+      <roles>
+        <role>lead</role>
+        <role>developer</role>
+        <role>support</role>
+        <role>reviewer</role>
+        <role>maintainer</role>
+      </roles>
+      <timezone>London</timezone>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
       <name>Piotr Baniukiewicz</name>
       <email>p.baniukiewicz@warwick.ac.uk</email>
       <organization>University of Warwick</organization>
       <roles>
         <role>developer</role>
-        <role>researcher</role>
-        <role>architect</role>
       </roles>
       <timezone>London</timezone>
-    </developer>
-  </developers>
+    </contributor>
+  </contributors>
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <!-- https://books.sonatype.com/mvnex-book/reference/customizing-sect-creating-simple-weather.html -->
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.5.1</version>
-          <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.7.6.201602180812</version>
-          <executions>
-            <execution>
-              <id>default-prepare-agent</id>
-              <goals>
-                <goal>prepare-agent</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.3</version>
-          <configuration>
-            <tagNameFormat>v@{project.version}</tagNameFormat>
-            <pushChanges>false</pushChanges>
-            <localCheckout>true</localCheckout>
-            <goals>install site</goals>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
+    <pluginManagement/>
   </build>
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <version>2.5</version>
-        <configuration>
-          <aggregate>true</aggregate>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.17</version>
-        <configuration>
-          <configLocation>google_checks.xml</configLocation>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.9</version>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.3</version>
-        <configuration>
-          <findbugsXmlOutput>true</findbugsXmlOutput>
-          <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-          <xmlOutput>true</xmlOutput>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.6</version>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.6.201602180812</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-changes-plugin</artifactId>
-        <version>2.12</version>
-        <reportSets>
-          <reportSet>
-            <reports/>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version>
-        <configuration>
-          <show>private</show>
-          <quiet>true</quiet>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
 </project>
