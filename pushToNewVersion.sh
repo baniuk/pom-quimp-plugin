@@ -14,7 +14,7 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-current=$(mvn help:evaluate -Dexpression=project.version | sed '4q;d' | awk '{print $4}')
+current=$(mvn help:evaluate -Dexpression=project.version | sed '4q;d' | awk '{print $8}')
 next=$1
 nextdev=$2
 
