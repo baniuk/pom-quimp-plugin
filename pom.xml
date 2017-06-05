@@ -9,7 +9,7 @@
   <!-- Project's coordinates -->
   <groupId>com.github.celldynamics</groupId>
   <artifactId>pom-quimp-plugin</artifactId>
-  <version>17.06.01</version>
+  <version>17.06.02-SNAPSHOT</version>
   <!-- http://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it -->
   <packaging>pom</packaging>
   <!-- Name and licencing and other project informations -->
@@ -69,7 +69,7 @@
       <dependency>
         <groupId>com.github.celldynamics.quimp</groupId>
         <artifactId>QuimP_</artifactId>
-        <version>17.06.01</version>
+        <version>17.06.02-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
